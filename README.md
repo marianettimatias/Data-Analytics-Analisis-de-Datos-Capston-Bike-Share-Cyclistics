@@ -4,11 +4,13 @@
 
 Para la resolución del mismo nos basamos en las 6 etapas del Análisis de Datos:
 
-- Preguntar.
+* Preguntar.(#Preguntar)
 - Preparar.
 - Procesar.
 - Analizar.
 - Visualizar.
 - Actuar.
 
+##Preguntar
+Hola que tal tu como estas
 
