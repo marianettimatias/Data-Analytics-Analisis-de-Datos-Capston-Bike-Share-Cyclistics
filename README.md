@@ -4,7 +4,7 @@
 
 Para la resolución del mismo nos basamos en las 6 etapas del Análisis de Datos:
 
-##Contenido
+##Etapas
 * [Preguntar](#preguntar)
 - Preparar.
 - Procesar.
@@ -13,54 +13,6 @@ Para la resolución del mismo nos basamos en las 6 etapas del Análisis de Datos
 - Actuar.
 
 
-
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
 ## Preguntar
 Hola que tal tu como estas
 
