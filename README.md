@@ -1,2 +1,14 @@
 # Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics
-Análisis de Datos del Uso Compartido de Bicicletas en Chicago, USA: Estudio de Caso de la Empresa Cyclistic
+**Resolución de un caso práctico del curso de Análisis de Datos de Google brindado por Coursera.**
+**Para el mismo se uso como herramienta R y RStudio.**
+
+Para la resolución del mismo nos basamos en las 6 etapas del Análisis de Datos:
+
+- Preguntar.
+- Preparar.
+- Procesar.
+- Analizar.
+- Visualizar.
+- Actuar.
+
+
