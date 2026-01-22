@@ -105,7 +105,7 @@ Cada dataset contiene 13 columnas las cuales son:
 * start_lng: Localización de longitud en la que se inició el viaje. Formato: col_double(). col_double().
 * end_lat: Localización de latitud en la que finalizó el viaje. Formato: col_double().
 * end_lng: Localización de longitud en la que finalizó el viaje. Formato: col_double(). col_double().
-* member_casual: Tipo de usuario. Formato: col_character()
+* member_casual: Tipo de usuario. Formato: col_character().
 
 ## Procesar
 
