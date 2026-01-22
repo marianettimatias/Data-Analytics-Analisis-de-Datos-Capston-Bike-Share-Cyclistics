@@ -42,7 +42,49 @@ Moreno se ha marcado un objetivo claro: diseñar estrategias de marketing dirigi
 
 ### Preparar
 
+Los datos han sido puestos a disposición por Motivate International Inc. 
+Se seleccionaron los datos correspondientes a los 12 meses del año 2022.
 
+```{r Importo los datos}
 
+#Importo los datos
 
+viajes_202201 <- read_csv("202201-divvy-tripdata.csv")
+viajes_202202 <- read_csv("202202-divvy-tripdata.csv")
+viajes_202203 <- read_csv("202203-divvy-tripdata.csv")
+viajes_202204 <- read_csv("202204-divvy-tripdata.csv")
+viajes_202205 <- read_csv("202205-divvy-tripdata.csv")
+viajes_202206 <- read_csv("202206-divvy-tripdata.csv")
+viajes_202207 <- read_csv("202207-divvy-tripdata.csv")
+viajes_202208 <- read_csv("202208-divvy-tripdata.csv")
+viajes_202209 <- read_csv("202209-divvy-tripdata.csv")
+viajes_202210 <- read_csv("202210-divvy-tripdata.csv")
+viajes_202211 <- read_csv("202211-divvy-tripdata.csv")
+viajes_202212 <- read_csv("202212-divvy-tripdata.csv")
+
+```
+Con los datos ya importados en mi entorno creo una lista de los dataset para facilitar la verificación de los mismos.
+
+```{r}
+lista_viajes_bici <- list(viajes_202201,
+                          viajes_202202,
+                          viajes_202203,
+                          viajes_202204,
+                          viajes_202205,
+                          viajes_202206,
+                          viajes_202207,
+                          viajes_202208,
+                          viajes_202209,
+                          viajes_202210,
+                          viajes_202211,
+                          viajes_202212)
+```
+
+Una vez creada la lista verifico la estructura de los datos para asegurarme que estén completos, sean relevantes para el análisis y libres de incongruencias.
+
+```{r Verifico estructura de los datos}
+for (df in lista_viajes_bici) {
+ print(str(df))
+}
+```
 
