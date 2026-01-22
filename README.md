@@ -15,15 +15,8 @@ Para la resolución del mismo nos basamos en las 6 etapas del Análisis de Datos
 - Visualizar.
 - Actuar.
 
-
-## Escenario
- Cyclistic es una empresa de bicicletas  compartidas  de  Chicago, cuentar con una flota de 5824 bicicletas geolocalizadas y conectadas a una red de 692 estaciones en Chicago.Las bicicletas  
-se  pueden  desbloquear  en  una  estación  y  devolver  en  cualquier  otra  del  sistema  en  cualquier  momento.
- 
- El  director  de  marketing  cree  que  el  éxito  futuro  de  la  empresa  depende  
-de  maximizar  el  número  de  suscripciones  anuales.  Por  lo  tanto,  tu  equipo  quiere  comprender  cómo  los  usuarios  
-ocasionales  y  los  usuarios  anuales  usan  las  bicicletas  de  Cyclistic  de  forma  diferente.  A  partir  de  esta  información,  
-tu  equipo  diseñará  una  nueva  estrategia  de  marketing  para  convertir  a  los  usuarios  ocasionales  en  usuarios  
-anuales.  Pero  primero,  los  ejecutivos  de  Cyclistic  deben  aprobar  tus  recomendaciones,  por  lo  que  deben  estar  
-respaldadas  por  información  convincente  y  visualizaciones  de  datos  profesionales.
+### Escenario
+Eres un analista de datos júnior que trabaja en el equipo de análisis de marketing de Cyclistic.Cyclistic es una empresa de bicicletas  compartidas  de  Chicago, cuentar con una flota de 5824 bicicletas geolocalizadas y conectadas a una red de 692 estaciones en Chicago.Las bicicletas se pueden desbloquear en una estación y devolver en cualquier otra del sistema en cualquier momento.
+Los clientes que compran pases para un solo viaje o para un día completo se denominan pasajeros ocasionales. Los clientes que compran membresías anuales son miembros de Cyclistic.
+El director de marketing cree que el éxito futuro de la empresa depende de maximizar el número de suscripciones anuales. Por lo tanto, tu equipo quiere comprender cómo los usuarios ocasionales y los usuarios anuales usan las bicicletas de Cyclistic de forma diferente.A partir de esta información, tu equipo diseñará una nueva estrategia de marketing para convertir a los usuarios ocasionales en usuarios anuales. Pero primero, los ejecutivos de Cyclistic deben aprobar tus recomendaciones, por lo que deben estar respaldadas por información convincente y visualizaciones de datos profesionales.
 
