@@ -87,4 +87,6 @@ for (df in lista_viajes_bici) {
  print(str(df))
 }
 ```
+Lo cual arroja un resultado como el siguiente para cada dataset
+![estructura dataset] 
 
