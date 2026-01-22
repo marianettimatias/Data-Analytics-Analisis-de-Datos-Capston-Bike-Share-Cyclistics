@@ -65,7 +65,7 @@ viajes_202212 <- read_csv("202212-divvy-tripdata.csv")
 ```
 Con los datos ya importados en mi entorno creo una lista de los dataset para facilitar la verificación de los mismos.
 
-```{r}
+```{r Creo lista}
 lista_viajes_bici <- list(viajes_202201,
                           viajes_202202,
                           viajes_202203,
@@ -87,6 +87,26 @@ for (df in lista_viajes_bici) {
  print(str(df))
 }
 ```
-Lo cual arroja un resultado como el siguiente para cada dataset
-![estructura dataset] 
+Lo cual arroja un resultado como el siguiente para cada dataset <br>
+
+![estructura dataset](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/8d5f5960dceb16c217bdb0a2c993913ce60f4290/Imagenes/str.png)
+
+Una vez verificado que todos los dataset tienen la misma estructura y formato de datos los uno a todos en un solo dataset.
+
+```{r Uno los dataset}
+Viajes_bici_completo <- bind_rows(lista_viajes_bici)
+```
+Elimino las columnas que poseen los datos de localización de inicio y fin de cada viaje.
+```{r Elimino columnas de localización}
+Viajes_bici <- Viajes_bici_completo %>%
+   select(-c(start_lat,start_lng,end_lat,end_lng))
+```
+Verifico si hay columnas que no contienen algún dato o datos na
+
+```{r columnas na}
+names(Viajes_bici)[colSums(is.na(Viajes_bici))>0]
+```
+Lo cual me arroja el siguiente resultado, que significa que las columnas que no contienen datos osea con datos na son "start_station_name" "start_station_id"   "end_station_name"   "end_station_id" . <br>
+
+![columnas con na](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/31f6f7e1da22ccee78bf2f4158e0003718afaaab/Imagenes/columnas%20con%20na.png)
 
