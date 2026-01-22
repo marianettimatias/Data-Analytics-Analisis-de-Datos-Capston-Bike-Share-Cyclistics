@@ -91,6 +91,24 @@ Lo cual arroja un resultado como el siguiente para cada dataset <br>
 
 ![estructura dataset](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/8d5f5960dceb16c217bdb0a2c993913ce60f4290/Imagenes/str.png)
 
+### Conclusión luego de preparar los datos:
+Cada dataset contiene 13 columnas las cuales son:
+* ride_id:  id del viaje. Formato: col_character().
+* rideable_type: Tipo de bicicleta que se uso en ese viaje. Formato: col_character().
+* started_at: Fecha y hora a la que se inicio el viaje. Formato: col_datetime(format = "").
+* ended_at: Fecha y hora a la que finalizó el viaje. Formato: col_datetime(format = "").
+* start_station_name: nombre de la estación en la que se inicio el viaje. Formato: col_character().
+* start_station_id: id de la estación en la que se inicio el viaje. Formato: col_character().
+* end_station_name: Nombre de la estación en la que finalizó el viaje. Formato: col_character().
+* end_station_id: id de la estación en la que finalizó el viaje. Formato: col_character().
+* start_lat: Localización de latitud en la que se inició el viaje. Formato: col_double().
+* start_lng: Localización de longitud en la que se inició el viaje. Formato: col_double(). col_double().
+* end_lat: Localización de latitud en la que finalizó el viaje. Formato: col_double().
+* end_lng: Localización de longitud en la que finalizó el viaje. Formato: col_double(). col_double().
+* member_casual: Tipo de usuario. Formato: col_character()
+
+## Procesar
+
 Una vez verificado que todos los dataset tienen la misma estructura y formato de datos los uno a todos en un solo dataset.
 
 ```{r Uno los dataset}
