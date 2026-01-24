@@ -92,6 +92,7 @@ Lo cual arroja un resultado como el siguiente para cada dataset <br>
 ![estructura dataset](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/8d5f5960dceb16c217bdb0a2c993913ce60f4290/Imagenes/str.png)
 
 ### Conclusión luego de preparar los datos:
+
 Cada dataset contiene 13 columnas las cuales son:
 * ride_id:  id del viaje. Formato: col_character().
 * rideable_type: Tipo de bicicleta que se uso en ese viaje. Formato: col_character().
@@ -107,19 +108,30 @@ Cada dataset contiene 13 columnas las cuales son:
 * end_lng: Localización de longitud en la que finalizó el viaje. Formato: col_double(). col_double().
 * member_casual: Tipo de usuario. Formato: col_character().
 
+Por lo tanto, podemos concluir que:
+
+Los datos son confiables, ya que se obtuvieron directamente de la compañía que administra las bicicletas de alquiler, lo que minimiza el riesgo de manipulaciones o errores de terceros.
+Los datos contienen toda la información necesaria para responder a las preguntas empresariales, como la identificación de cada viaje, así como la fecha y hora de inicio y fin de cada uno, y el tipo de miembro que realizó cada viaje.
+Los datos eran actuales y corresponden al período estudiado.
+
 ## Procesar
 
-Una vez verificado que todos los dataset tienen la misma estructura y formato de datos los uno a todos en un solo dataset.
+En esta etapa se llevará a cabo la limpieza de los datos, que consistirá en seleccionar las columnas que contienen la información necesaria para realizar el análisis, verificar la ausencia de datos relevantes, eliminar duplicados y confirmar que los datos tengan el formato adecuado.
+
+Una vez verificado que todos los conjuntos de datos (datasets) tienen la misma estructura y formato, los combinaré en un solo dataset.
 
 ```{r Uno los dataset}
 Viajes_bici_completo <- bind_rows(lista_viajes_bici)
 ```
-Elimino las columnas que poseen los datos de localización de inicio y fin de cada viaje.
+Obtengo un solo dataset con 5.667.717 registros.
+
+Elimino las columnas que poseen los datos de localización de inicio y fin de cada viaje ya que no son relevantes para el análisis.
+
 ```{r Elimino columnas de localización}
 Viajes_bici <- Viajes_bici_completo %>%
    select(-c(start_lat,start_lng,end_lat,end_lng))
 ```
-Verifico si hay columnas que no contienen algún dato o datos na
+Verifico si hay columnas que no contienen datos o que contienen valores nulos (NA).
 
 ```{r columnas na}
 names(Viajes_bici)[colSums(is.na(Viajes_bici))>0]
