@@ -214,6 +214,8 @@ Calculamos el tiempo promedio, mínimo y máximo de uso por tipo de usuario en m
 
 ![Tiempos de uso por tipo de usuario](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/84f79814a3641456d7440793dba0ab80fff57814/Imagenes/Tiempo%20de%20uso%20por%20tipo%20de%20usuario.png)
 
+
+
 * Los días que más usan las bicicletas y el tipo de bicicletas.<br>
 * El horario durante el día en el que recogen la bicicleta para hacer uso del servicio.<br>
 
