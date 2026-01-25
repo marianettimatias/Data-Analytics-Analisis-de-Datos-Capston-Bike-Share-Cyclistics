@@ -212,7 +212,15 @@ El porcentaje de ciclistas miembros que usan el servicio es de 59.03% y el de ci
 
 Calculamos el tiempo promedio, mínimo y máximo de uso por tipo de usuario en minutos.
 
-![Tiempos de uso por tipo de usuario](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/84f79814a3641456d7440793dba0ab80fff57814/Imagenes/Tiempo%20de%20uso%20por%20tipo%20de%20usuario.png)
+![Tiempos de uso por tipo de usuario](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/e7e7c6dd8a31b963c92bbc61dab296eb6bea3059/Imagenes/Tiempo%20de%20uso%20por%20tipo%20de%20usuario.png)
+
+A partir de los resultados obtenidos podemos observar que los usuarios casuales tienen un promedio de uso mayor a los miembros del programa.
+Se observa que para los usuarios casuales el valors máximo es extremadamente altos, lo que puede deberse a un caso atípico. De igual manera los valores mínimos para ambos miembros son muy bajos por lo que puede deberse a situaciones accidentales.
+<br>
+Sería importante realizar un análisis de los valores atípicos para evaluar la influencia de los valores extremos en las conclusiones.
+De igual manera se obtiene una mediana de 13 minutos para los usuarios casuales y una mediana de 8,83 minutos para los usuarios miembros, lo que se sigue observando la diferencia de uso entre los dos grupos.
+Por lo que podemos decir que los usuarios miembros del programa hacen uso de las bicicletas para recorridos más cortos.
+
 
 
 
