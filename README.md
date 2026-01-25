@@ -45,9 +45,8 @@ Moreno se ha marcado un objetivo claro: diseñar estrategias de marketing dirigi
 Los datos han sido puestos a disposición por Motivate International Inc. 
 Se seleccionaron los datos correspondientes a los 12 meses del año 2022.
 
+*Importo los datos*
 ```{r Importo los datos}
-
-#Importo los datos
 
 viajes_202201 <- read_csv("202201-divvy-tripdata.csv")
 viajes_202202 <- read_csv("202202-divvy-tripdata.csv")
@@ -63,7 +62,7 @@ viajes_202211 <- read_csv("202211-divvy-tripdata.csv")
 viajes_202212 <- read_csv("202212-divvy-tripdata.csv")
 
 ```
-Con los datos ya importados en mi entorno creo una lista de los dataset para facilitar la verificación de los mismos.
+*Con los datos ya importados en mi entorno creo una lista de los dataset para facilitar la verificación de los mismos.*
 
 ```{r Creo lista}
 lista_viajes_bici <- list(viajes_202201,
@@ -120,23 +119,64 @@ En esta etapa se llevará a cabo la limpieza de los datos, que consistirá en se
 
 Una vez verificado que todos los conjuntos de datos (datasets) tienen la misma estructura y formato, los combinaré en un solo dataset.
 
+*Combino los datos.*
+
 ```{r Uno los dataset}
 Viajes_bici_completo <- bind_rows(lista_viajes_bici)
 ```
 Obtengo un solo dataset con 5.667.717 registros.
 
-Elimino las columnas que poseen los datos de localización de inicio y fin de cada viaje ya que no son relevantes para el análisis.
+*Elimino las columnas que poseen los datos de localización de inicio y fin de cada viaje ya que no son relevantes para el análisis.*
 
 ```{r Elimino columnas de localización}
 Viajes_bici <- Viajes_bici_completo %>%
    select(-c(start_lat,start_lng,end_lat,end_lng))
 ```
-Verifico si hay columnas que no contienen datos o que contienen valores nulos (NA).
+*Verifico si hay columnas que no contienen datos o que contienen valores nulos (NA).*
 
-```{r columnas na}
+```{r Columnas na}
 names(Viajes_bici)[colSums(is.na(Viajes_bici))>0]
 ```
-Lo cual me arroja el siguiente resultado, que significa que las columnas que no contienen datos osea con datos na son "start_station_name" "start_station_id"   "end_station_name"   "end_station_id" . <br>
+Lo cual me arroja el siguiente resultado:
 
 ![columnas con na](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/31f6f7e1da22ccee78bf2f4158e0003718afaaab/Imagenes/columnas%20con%20na.png)
+
+Que significa que las columnas que no contienen datos osea con datos na son "start_station_name" "start_station_id"   "end_station_name"   "end_station_id" . <br>
+Debido a que la falta de estos datos no influye en mi análisis, no haré nada con estos.
+
+*Elimino las filas duplicadas*
+
+```{r Elimino las filas}
+Viajes_bici <- Viajes_bici %>%
+  distinct()
+```
+Se mantiene la misma cantidad de filas por lo que se conluye que no habían filas duplicadas.
+
+*Agrego una columna en la que calculo la duración de los viajes en minutos.*
+
+```{r Calculo la duración de los viajes}
+Viajes_bici <- Viajes_bici %>%
+  mutate(duracion_viajes = difftime(ended_at, started_at, units = "mins"))
+```
+La columna creada tiene formato de tiempo, la convierto en formato numérico para el análisis.
+
+```{r Convierto a formato numérico}
+Viajes_bici <- Viajes_bici %>%
+  mutate(duracion_viajes = as.numeric(duracion_viajes))
+```
+
+*Verifico si existen viajes con duración 0 o negativa.*
+
+```{r Busco viajes con duración 0 o negativa}
+any(Viajes_bici$duracion_viajes <= 0, na.rm = TRUE)
+```
+Por consola me arroja TRUE lo que significa que hay valores 0 o negativos.
+
+*Elimino las filas con duración 0 o negativa.*
+
+```{r Elimino las filas con duración 0 o negativa}
+Viajes_bici <- Viajes_bici %>%
+  filter(duracion_viajes >0)
+```
+Luego de esto obtengo un dataset con 5.667.186 registros.
 
