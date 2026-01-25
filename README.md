@@ -188,7 +188,32 @@ Viajes_bici <- Viajes_bici %>%
 ```
 Luego de esto obtengo un dataset con 5.667.186 registros.
 
-Con esto conlcuimos la estapa de Preparar los datos y el dataset está listo para pasar a la etapa de Análisis.
+Con esto conlcuimos la etapa de Preparar los datos y el dataset está listo para pasar a la etapa de Análisis.
 
 ## Análisis.
+
+Con los datos ya limpios pasamos a la etapa de análisis donde usaremos los mismos para responder las preguntas empresariales.
+
+*¿Cuál es el porcentaje actual de ciclistas ocasionales y miembros anuales en el total de usuarios de las bicicletas compartidas?*
+
+```{r Calculo del pocentaje de cada tipo de ciclista que uso el servicio}
+porcentaje_tipo_usuarios <- Viajes_bici %>%
+  group_by(member_casual) %>%
+  summarize(cant_usuarios = n(), porcentaje = n()/ sum(nrow(Viajes_bici))*100, .groups = "drop")
+```
+Lo cual nos arroja el siguiente resultado:
+
+![Porcentaje tipo de usuario](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/04aec4508b073b7f4ef7e981a31682746ec7b984/Imagenes/Porcentaje%20tipo%20de%20usuario.png)
+
+El porcentaje de ciclistas miembros que usan el servicio es de 59.03% y el de ciclistas casuales es de 40.97%.
+
+*¿Cuáles son las diferencias clave en el uso de las bicicletas Cyclistic entre los ciclistas ocasionales y los miembros anuales? Respecto a:<br>*
+* El tiempo de uso de la bicicleta.<br>
+
+Calculamos el tiempo promedio, mínimo y máximo de uso por tipo de usuario en minutos.
+
+![Tiempos de uso por tipo de usuario](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/84f79814a3641456d7440793dba0ab80fff57814/Imagenes/Tiempo%20de%20uso%20por%20tipo%20de%20usuario.png)
+
+* Los días que más usan las bicicletas y el tipo de bicicletas.<br>
+* El horario durante el día en el que recogen la bicicleta para hacer uso del servicio.<br>
 
