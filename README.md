@@ -31,14 +31,22 @@ Moreno se ha marcado un objetivo claro: diseñar estrategias de marketing dirigi
 
 **Preguntas para analizar** <br>
 
-¿Cuál es el porcentaje actual de ciclistas ocasionales y miembros anuales en el total de usuarios de las bicicletas compartidas?<br>
+Tres preguntas guiarán el futuro programa de marketing:
 
-¿Cuáles son las diferencias clave en el uso de las bicicletas Cyclistic entre los ciclistas ocasionales y los miembros anuales? Respecto a:<br>
+1- ¿En qué forma diferente utilizan las bicicletas ciclistas los socios anuales y los ciclistas ocasionales?<br>
+2- ¿Por qué los ciclistas ocasionales comprarían membresías anuales de Cyclistic?<br>
+3- ¿Cómo puede Cyclistic utilizar los medios digitales para influir en los ciclistas ocasionales para que se conviertan en miembros?<br>
+
+**Moreno me ha asignado la primera pregunta a responder: ¿En qué forma diferente utilizan las bicicletas Cyclistic los miembros del programa y los ciclistas casuales?**<br>
+
+Para responder esto responderemos las siguientes preguntas:<br>
+
+1- ¿Cuál es el porcentaje actual de ciclistas ocasionales y miembros anuales en el total de usuarios de las bicicletas compartidas?<br>
+
+2- ¿Cuáles son las diferencias clave en el uso de las bicicletas Cyclistic entre los ciclistas ocasionales y los miembros anuales? Respecto a:<br>
 * El tiempo de uso de la bicicleta.<br>
 * Los días que más usan las bicicletas y el tipo de bicicletas.<br>
 * El horario durante el día en el que recogen la bicicleta para hacer uso del servicio.<br>
-
-¿En qué se diferencian los socios anuales y los ciclistas ocasionales con respecto al uso de las bicicletas de Cyclistic?.<br>
 
 ### Preparar
 
@@ -179,4 +187,8 @@ Viajes_bici <- Viajes_bici %>%
   filter(duracion_viajes >0)
 ```
 Luego de esto obtengo un dataset con 5.667.186 registros.
+
+Con esto conlcuimos la estapa de Preparar los datos y el dataset está listo para pasar a la etapa de Análisis.
+
+## Análisis.
 
