@@ -212,6 +212,13 @@ El porcentaje de ciclistas miembros que usan el servicio es de 59.03% y el de ci
 
 Calculamos el tiempo promedio, mínimo y máximo de uso por tipo de usuario en minutos.
 
+```{r Tiempo de uso}
+tiemp_uso_por_tipo_de_usuario <- Viajes_bici %>%
+  group_by(member_casual)%>%
+  summarize(prom_uso = mean(duracion_viajes), min_uso = min(duracion_viajes), max_uso = max(duracion_viajes), mediana_uso = median(duracion_viajes))
+```
+Obtenemos los siguientes resultados:
+
 ![Tiempos de uso por tipo de usuario](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/e7e7c6dd8a31b963c92bbc61dab296eb6bea3059/Imagenes/Tiempo%20de%20uso%20por%20tipo%20de%20usuario.png)
 
 A partir de los resultados obtenidos podemos observar que los usuarios casuales tienen un promedio de uso mayor a los miembros del programa.
@@ -220,6 +227,26 @@ Se observa que para los usuarios casuales el valors máximo es extremadamente al
 Sería importante realizar un análisis de los valores atípicos para evaluar la influencia de los valores extremos en las conclusiones.
 De igual manera se obtiene una mediana de 13 minutos para los usuarios casuales y una mediana de 8,83 minutos para los usuarios miembros, lo que se sigue observando la diferencia de uso entre los dos grupos.
 Por lo que podemos decir que los usuarios miembros del programa hacen uso de las bicicletas para recorridos más cortos.
+
+*Días y horario en que hacen uso del servicio<br>
+
+Creo una nueva columna para el día de uso
+
+```{r Creo una nueva columna para el día de uso}
+Viajes_bici <- mutate(Viajes_bici, dia_uso = (weekdays(started_at)))
+```
+Ordeno los días
+
+```{r Ordeno los días}
+Viajes_bici$dia_uso <-factor(Viajes_bici$dia_uso, levels = c("domingo", "lunes", "martes", "miércoles", "jueves","viernes", "sábado"))
+```
+Calculo el promedio de uso por día de la semana por tipo de usuario
+
+```{r Promedio de uso por día de la semana por tipo de usuario}
+prom_dia_tipo_de_usuario <- Viajes_bici %>%
+  group_by(member_casual, dia_uso) %>%
+  summarize(prom_uso_min = mean(duracion_viajes))
+```
 
 
 
