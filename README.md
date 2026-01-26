@@ -248,6 +248,39 @@ prom_dia_tipo_de_usuario <- Viajes_bici %>%
   summarize(prom_uso_min = mean(duracion_viajes))
 ```
 
+![Tiempo de uso por día](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/5d3fbc31c0fc81596dfba56fefe65fc0614190d7/Imagenes/Tiempo%20de%20uso%20por%20d%C3%ADa.png)
+
+Acá podemos observar que tanto los miembros del programa como los usuarios casuales tienen un promedio de uso mayor de viernes a lunes.
+También haciendo foco en los miembros del programa podemos ver que durante los días de semana el promedio de uso se mantiene estable, lo que se podría decir es que hacen uso de las bicicletas para tareas de rutina.
+
+*Franja horaria del día en que hacen uso del servicio<br>
+
+Primero creo una función para determinar la franja horaria en que hicieron uso.
+
+```{r Función franja horaria}
+horario <- function(hora){
+  case_when(
+    hora >= 0 & hora < 6 ~ "madrugada",
+    hora >= 6 & hora < 12 ~ "mañana",
+    hora >= 12 & hora < 18 ~ "tarde",
+    TRUE ~ "noche"
+  )
+}
+```
+Creo la columna en la cual guardaré la hora del día en que hicieron uso del servicio para luego al pasarla por la función obtendre la franja horaria.
+
+```{r Hora de uso}
+Viajes_bici <- Viajes_bici %>%
+  mutate(hora = hour(started_at))
+```
+
+Creo la columna en la que guardaré la etiqueta de la franja horaria.
+
+```{r Columna franja horaria}
+Viajes_bici <- Viajes_bici %>%
+  mutate(franja_horaria = horario(hora))
+```
+
 
 
 
