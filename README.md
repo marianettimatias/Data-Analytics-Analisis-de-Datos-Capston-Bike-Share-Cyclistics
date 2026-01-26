@@ -280,10 +280,20 @@ Creo la columna en la que guardaré la etiqueta de la franja horaria.
 Viajes_bici <- Viajes_bici %>%
   mutate(franja_horaria = horario(hora))
 ```
+Ordeno los días
 
+```{r Ordeno los días}
+Viajes_bici$franja_horaria <- factor(Viajes_bici$franja_horaria, levels = c("madrugada", "mañana", "tarde", "noche"))
+```
+Calculo el promedio de uso por franja horaria y por tipo de usuario
 
+```{r Promedio de uso por franja horaria y por tipo de usuario}
+prom_uso_franja_horaria <- Viajes_bici %>%
+  group_by(member_casual, franja_horaria) %>%
+  summarize(promedio = mean(duracion_viajes), .groups = "drop")
+```
+Obtengo los siguientes resultados:
 
+![Promedio de uso por franja horaria](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/de5f98d1bab625d2e34e44a10c70653f031c4143/Imagenes/prom%20uso%20franja%20horaria.png)
 
-* Los días que más usan las bicicletas y el tipo de bicicletas.<br>
-* El horario durante el día en el que recogen la bicicleta para hacer uso del servicio.<br>
 
