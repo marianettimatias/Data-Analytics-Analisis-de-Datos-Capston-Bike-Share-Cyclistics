@@ -296,4 +296,4 @@ Obtengo los siguientes resultados:
 
 ![Promedio de uso por franja horaria](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/de5f98d1bab625d2e34e44a10c70653f031c4143/Imagenes/prom%20uso%20franja%20horaria.png)
 
-
+Respecto al uso por franja horaria, los usuarios casuales hacen mayor uso durante la madrugada  y los usuarios miembros del programa lo hacen durante la tarde y la noche.
