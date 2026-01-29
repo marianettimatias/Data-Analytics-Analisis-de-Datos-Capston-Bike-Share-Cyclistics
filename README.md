@@ -297,3 +297,37 @@ Obtengo los siguientes resultados:
 ![Promedio de uso por franja horaria](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/de5f98d1bab625d2e34e44a10c70653f031c4143/Imagenes/prom%20uso%20franja%20horaria.png)
 
 Respecto al uso por franja horaria, los usuarios casuales hacen mayor uso durante la madrugada  y los usuarios miembros del programa lo hacen durante la tarde y la noche.
+
+## Visualizar
+
+ *Visualizamos la cantidad de viajes por día de la semana por tipo de usuario.*<br>
+
+ ```{r Gráfico viajes por día de la semana por tipo de usuario}
+ggplot(data = Viajes_bici)+
+  geom_bar(mapping = aes(x = dia_uso))+
+  facet_wrap(~member_casual)+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))+
+  labs(title = "Número de viajes por día de la semana por tipo de usuario",
+       x = "Día de la semana", y = "Número de viajes")
+```
+![Nro de viajes por día por tipo de usuario](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/9c3e12450ca2dcb5fe04ab3378123a584fdc9698/Imagenes/N%C3%BAmero%20de%20viajes%20por%20d%C3%ADa%20de%20la%20semana%20por%20tipo%20de%20usuario.png)
+
+Del gráfico podemos observar que:
+* Los usuarios casuales hacen mayor uso de las bicicletas los fines de semana, empezando los jueves hasta lograr su máximo los sábados. Esto puede deberse a que la mayor parte de usuarios casuales son turistas que visitan la ciudad los fines de semana.
+* Los usuarios miembros del programa hacen mayor uso los días de semana siendo el menor día de uso los domingos. Esto puede estar relacionado a que usan el servicio para realizar viajes de rutinas.
+<br>
+
+*Visualizamos el número de viajes por franja horaria y por tipo de usuario.*<br>
+
+ ```{r Gráfico viajes franja horaria por tipo de usuario}
+ggplot(data = Viajes_bici)+
+  geom_bar(mapping = aes(x = franja_horaria, fill = member_casual))+
+  facet_wrap(~member_casual)+
+  theme(axis.text.x = element_text(angle= 45, hjust = 1, vjust = 1))+
+  labs(title = "Número de viajes por franja horaria y por tipo de usuario",
+       x = "Franja horaria", y = "Número de viajes", fill = "Tipo de usuario")
+```
+
+![Número de viajes por franja horaria por tipo de usuario](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/f4a295168a0db91cac6eaa4d7ee61b5951ef11ed/Imagenes/N%C3%BAmero%20de%20viajes%20por%20franja%20horaria%20y%20por%20tipo%20de%20usuario.png)
+
+
