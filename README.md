@@ -371,7 +371,7 @@ De esto podríamos decir que los usuarios casuales usan el servicio los fines de
 
 ## Actuar
 
-Conclusiones y recomendaciones:
+**Conclusiones y recomendaciones:**
 
 * *Distribución de usuarios del sistema:* <br>
 Del total de usuarios que usaron el sistema en el periódo estudiado el 59% de los mismos fueron usuarios miembros mientras que el 41% son usuarios casuales.<br>
