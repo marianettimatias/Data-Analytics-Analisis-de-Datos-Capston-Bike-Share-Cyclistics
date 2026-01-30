@@ -347,12 +347,38 @@ ggplot(data = Viajes_bici)+
 Se observan valores atípicos en los miembros casuales extremadamente altos que pueden deberse a errores en el uso del sistema como olvidar terminar el viaje.
 
 *Usuarios Casuales* <br>
+
 * La mayoria de los viajes se concentran por debajo de los 5000 minutos de duración (3,5 días).
 * Luego se ubican los viajes con duración entre los 5000 minutos (3,5 días) y los 15000 (10 días) que pueden deberse a turistas que utilizan el servicio durante su estadia en la ciudad.
 * Por último se ubican los viajes con duración mayor a 15000 (10 días) que los consideraremos como atípicos.
 
  *Usuarios Miembros* <br>
  * La mayoria de los viajes tienen una duración aproximada de 2000 minutos (1,38 días) que puede deberse a que los usuarios toman las bicicletas al inicio del día y hacen devolución de las mismas al terminar la jornada.
+
+*Visualizamos el tiempo promedio de uso por día y por tipo de usuario*.<br>
+
+ ```{r Tiempo promedio de uso por día y por tipo de usuario}
+ggplot(data = prom_dia_tipo_de_usuario)+
+  geom_col(mapping = aes(x = dia_uso, y = prom_uso_min, fill = member_casual))+
+  facet_wrap(~member_casual)+
+  theme( axis.text.x =  element_text(angle = 45, hjust = 1, vjust = 1))+
+  labs(title= "Tiempo promedio de uso por día y por tipo de usuario", x = "Día de uso", y = "Tiempo promedio de uso (min)", fill = "Tipo de usuario")
+```
+![Tiempo promedio de uso por día y por tipo de usuario](https://github.com/marianettimatias/Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics/blob/6d5928a8a241780d2056a632eee4f8e3b113f9ac/Imagenes/Gr%C3%A1fico%20de%20Tiempo%20promedio%20de%20uso%20por%20d%C3%ADa%20y%20por%20tipo%20de%20usuario.png)
+
+De la visualización podemos observar que los usuarios casuales hacen un mayor uso del servicio los días Viernes, Sábado, Domingo y Lunes. Por otro lado los usuarios miembros del programa tienen un promedio de uso mayor los días Sábado y Domingo.<br>
+De esto podríamos decir que los usuarios casuales usan el servicio los fines de semana para realizar viajes más largos y que los usuarios miembros aparte de hacer uso para tareas de rutina también pueden estar haciendo uso del servicio para actividades de recreación.
+
+## Actuar
+
+Conclusiones y recomendaciones:
+
+* *Distribución de usuarios del sistema:* <br>
+Del total de usuarios que usaron el sistema en el periódo estudiado el 59% de los mismos fueron usuarios miembros mientras que el 41% son usuarios casuales.<br>
+La empresa debería realizar alguna campaña para que los usuarios casuales se afilien al sistema y pasen a ser usuarios miembros.
+
+* *El tiempo de uso de la bicicleta:* <br>
+Los usuarios casuales hacen uso por más tiempo promedio, por lo que se puede aprovechar esto brindandoles algún beneficio para que se hagan usuarios miembros.
 
 
 
