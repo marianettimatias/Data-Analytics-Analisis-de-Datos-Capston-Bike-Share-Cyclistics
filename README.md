@@ -1,4 +1,4 @@
-# Data-Analytics-Analisis-de-Datos-Capston-Bike-Share-Cyclistics
+# Data Analytics - Analisis-de-Datos - Capston Bike Share Cyclistics
 **Resolución de un caso práctico del curso de Análisis de Datos de Google brindado por Coursera.** <br>
 
 El objetivo del proyecto es aplicar los conceptos y las herramientas obtenidas en el curso. Para el mismo se usa una empresa ficticia de alquiler de bicicletas compartidas y realizar el análisis de los datos obtenidos del uso de las mismas por los distintos usuarios.
