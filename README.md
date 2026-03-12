@@ -20,7 +20,8 @@ Moreno se ha marcado un objetivo claro: diseñar estrategias de marketing dirigi
 
 **Para la resolución del mismo nos basamos en las 6 etapas del Análisis de Datos:**
 ## Etapas
-* [Preguntar](#preguntar)
+
+- Preguntar
 - Preparar.
 - Procesar.
 - Analizar.
